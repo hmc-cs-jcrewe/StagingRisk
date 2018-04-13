@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Insert Disaster Title Here</title>
+    <title>The Dangers of Fracking </title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -31,14 +31,14 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">DISASTER TITLE</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Fracking Dangers</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About Disaster</a>
+              <a class="nav-link js-scroll-trigger" href="#about">About Fracking</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#action">What can you do?</a>
@@ -46,9 +46,6 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">See for youself</a> 
               <!-- Way to visualize the modern risks, portforlio of images -->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -60,7 +57,7 @@
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>Insert Disaster Title Here</strong>
+              <strong>The Dangers of Fracking</strong>
             </h1>
             <hr>
           </div>
@@ -76,10 +73,10 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">Disaster Title </h2>
+            <h2 class="section-heading text-white">Fracking </h2>
             <hr class="light my-4">
             <p class="text-faded mb-4"> Main staging information goes here </p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#action">Get Started!</a>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="#action">Want to Help?</a>
           </div>
         </div>
       </div>
@@ -100,6 +97,8 @@
             <button id="previous">Previous Question</button>
             <button id="next">Next Question</button>
             <button id="submit">Submit Quiz</button>
+            <br>
+            <button id="repeat" style="visibility: hidden">Take Quiz Again</button>
             <div id="results"></div>
             
             
@@ -109,32 +108,29 @@
                 // TODO - Change myQuestions to reflect disaster
                 const myQuestions = [
                   {
-                    question: "Who is the strongest?",
+                    question: "Have you seen fracking affect your local landscape, or are its effects less obvious?",
                     answers: {
-                      a: "Superman",
-                      b: "The Terminator",
-                      c: "Waluigi, obviously"
+                      a: "Close to home ",
+                      b: "Far away ",
                     },
-                    correctAnswer: "c"
+                    correctAnswer: "a"
                   },
                   {
-                    question: "What is the best site ever created?",
+                    question: "Are you involved with or comfortable with getting involved in your government or local community?",
                     answers: {
-                      a: "SitePoint",
-                      b: "Simple Steps Code",
-                      c: "Trick question; they're both the best"
+                      a: "Want to get involved",
+                      b: "Already heavily involved",
+                      c: "I'd rather not get involved in this way"
                     },
-                    correctAnswer: "c"
+                    correctAnswer: "a"
                   },
                   {
-                    question: "Where is Waldo really?",
+                    question: "Do you want to take action with a group or alone?",
                     answers: {
-                      a: "Antarctica",
-                      b: "Exploring the Pacific Ocean",
-                      c: "Sitting in a tree",
-                      d: "Minding his own business, so stop asking"
+                      a: "I'd prefer to not involve others",
+                      b: "Lets get everyone involved",
                     },
-                    correctAnswer: "d"
+                    correctAnswer: "a"
                   }
                 ];
                 
@@ -151,11 +147,12 @@
                     for (letter in currentQuestion.answers) {
                       // ...add an HTML radio button
                       answers.push(
-                        `<label>
+                        `<div class = "border">
+                        <label>
                            <input type="radio" name="question${questionNumber}" value="${letter}">
-                            ${letter} :
                             ${currentQuestion.answers[letter]}
-                         </label>`
+                         </label>
+                         </div>`
                       );
                     }
                   
@@ -167,43 +164,130 @@
                        </div>`
                     );
                   });
-                
                   // finally combine our output list into one string of HTML and put it on the page
                   quizContainer.innerHTML = output.join("");
+                //}
+              }
+                function buildResponses() {
+                  const outputResponse = []
+                    outputResponse.push(
+                      `<div class="slide" id="coalition">
+                        <h3>Americans Against Fracking </h3>
+                        <p> Pledge your support for this cause by signing up for the National Coalition to Ban Fracking. This coalition strives to make policy changes to protect the population against the dangers of fracking, and the larger the base they get the more political 
+                        influence they gain. To sign up or sign petitions in support of the cause click <a href = "https://www.americansagainstfracking.org/take-action/"> here <\a> </p>
+                      </div>`
+                  );
+                  outputResponse.push(
+                      `<div class="slide" id="email">
+                        <h3> Email or Call your local policy makers</h3>
+                        <p> Let your opinion be heard by your representative. If representatives feel pressure from their constituents they 
+                        are more likely to enact change. Find your representatives in the federal
+                         government <a href = "https://www.usa.gov/elected-officials"> here </a></p> 
+                      </div>`
+                  );
+
+                  outputResponse.push(
+                      `<div class="slide" id="event">
+                        <h3> Organize an Event</h3>
+                        <p> Fracking directly affects you and your home, so organize a local event to raise awareness and support for fracking regulations. To find out more and get advice for how to organize these events, click <a href = "https://environmentamerica.org/sites/environment/files/cpn/fracking-toolkit/fighting-fracking-toolkit.html#event"> here <\a> </p> 
+                      </div>`
+                  );
+
+                  quizContainer.innerHTML += outputResponse.join("")
                 }
-                
                 // TODO - change this function to reveal another page which can 
                 // Create another slide 
+                // function showResults() {
+                //   // gather answer containers from our quiz
+                //   const answerContainers = quizContainer.querySelectorAll(".answers");
+                
+                //   // keep track of user's answers
+                //   let numCorrect = 0;
+                
+                //   // for each question...
+                //   myQuestions.forEach((currentQuestion, questionNumber) => {
+                //     // find selected answer
+                //     const answerContainer = answerContainers[questionNumber];
+                //     const selector = `input[name=question${questionNumber}]:checked`;
+                //     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+                  
+                //     // if answer is correct
+                //     if (userAnswer === currentQuestion.correctAnswer) {
+                //       // add to the number of correct answers
+                //       numCorrect++;
+                    
+                //       // color the answers green
+                //       answerContainers[questionNumber].style.color = "lightgreen";
+                //     } else {
+                //       // if answer is wrong or blank
+                //       // color the answers red
+                //       answerContainers[questionNumber].style.color = "red";
+                //     }
+                //   });
+                
+                // }
                 function showResults() {
-                  // gather answer containers from our quiz
+                  slides[currentSlide].classList.remove("active-slide"); 
+                  prev = document.getElementById("previous");
+                  next = document.getElementById("next");
+                  show = document.getElementById("submit");
+                  again = document.getElementById("repeat");
+                  prev.style.display = "none";
+                  next.style.display = "none";
+                  show.style.display = "none";
+                  again.style.visibility= "visible";
+                  answerList = [];
                   const answerContainers = quizContainer.querySelectorAll(".answers");
-                
-                  // keep track of user's answers
-                  let numCorrect = 0;
-                
-                  // for each question...
                   myQuestions.forEach((currentQuestion, questionNumber) => {
-                    // find selected answer
                     const answerContainer = answerContainers[questionNumber];
                     const selector = `input[name=question${questionNumber}]:checked`;
                     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-                  
-                    // if answer is correct
-                    if (userAnswer === currentQuestion.correctAnswer) {
-                      // add to the number of correct answers
-                      numCorrect++;
-                    
-                      // color the answers green
-                      answerContainers[questionNumber].style.color = "lightgreen";
-                    } else {
-                      // if answer is wrong or blank
-                      // color the answers red
-                      answerContainers[questionNumber].style.color = "red";
-                    }
+                    answerList += userAnswer
                   });
-                
-                  // show number of correct answers out of total
-                  resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+                  console.log(answerList)
+                  //Get the slides that are answers 
+                  const eventSlide = document.getElementById("event")
+                  const petitionSlide = document.getElementById("coalition")
+                  const emailSlide = document.getElementById("email")
+                  if (answerList[1] == 'c') { // Don't want to deal with gov means petition
+                    petitionSlide.classList.add("active-slide")
+                    currentSlide = Array.from(slides).indexOf(petitionSlide)
+                  }
+                  else { // Willing to deal with gov & community/ no response 
+                    if (answerList[2] == 'a') {//Prefer to work alone -- call / email reps 
+                      emailSlide.classList.add("active-slide")
+                      currentSlide = Array.from(slides).indexOf(emailSlide)
+                    } 
+                    else { // Prefers to interact with people 
+                      if (answerList[0] == 'a'){ //Close by
+                        eventSlide.classList.add("active-slide")
+                        currentSlide = Array.from(slides).indexOf(eventSlide)
+
+                      }
+                      else{ // Far away 
+                        emailSlide.classList.add("active-slide")
+                        currentSlide = Array.from(slides).indexOf(emailSlide)
+                      }
+                    }
+
+                  }
+                }
+
+                function resetQuiz() {
+                  slides[currentSlide].classList.remove("active-slide");
+                  showSlide(0)
+                  again = document.getElementById("repeat")
+                  again.style.cssText = "visibility:hidden";
+                  const answerContainers = quizContainer.querySelectorAll(".answers");
+                  myQuestions.forEach((currentQuestion, questionNumber) => {
+                    const answerContainer = answerContainers[questionNumber];
+                    const selector = `input[name=question${questionNumber}]:checked`;
+                    const userAnswer = (answerContainer.querySelector(selector));
+                    userAnswer.checked = false; //Resets all the selections
+                  });
+                  
+
+
                 }
               
                 function showSlide(n) {
@@ -217,7 +301,7 @@
                     previousButton.style.display = "inline-block";
                   }
 
-                  if (currentSlide === slides.length - 1) {
+                  if (currentSlide === myQuestions.length - 1) {
                     nextButton.style.display = "none";
                     submitButton.style.display = "inline-block";
                   } else {
@@ -237,9 +321,13 @@
                 const quizContainer = document.getElementById("quiz");
                 const resultsContainer = document.getElementById("results");
                 const submitButton = document.getElementById("submit");
+                const resetButton = document.getElementById("repeat")
               
                 // display quiz right away
                 buildQuiz();
+
+                //get the responses ready for display 
+                buildResponses()
               
                 const previousButton = document.getElementById("previous");
                 const nextButton = document.getElementById("next");
@@ -252,6 +340,8 @@
                 submitButton.addEventListener("click", showResults);
                 previousButton.addEventListener("click", showPreviousSlide);
                 nextButton.addEventListener("click", showNextSlide);
+                resetButton.addEventListener("click", resetQuiz)
+
               })();
             </script>
           </div>
@@ -268,120 +358,96 @@
       <!-- Put images of the disaster here each with links to more information about that specific instance?-->
       <div class="container-fluid p-0">
         <div class="row no-gutters popup-gallery">
+          
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+            <a class="portfolio-box" href="img/portfolio/fullsize/earthquake.jpg">
+              <img class="img-fluid" src="img/portfolio/fullsize/earthquake.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Earthquakes
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Fracking rigs damaging the earth's structual integrity increasing chances of earthquakes
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+            <a class="portfolio-box" href="img/portfolio/fullsize/fireWater.jpg">
+              <img class="img-fluid" src="img/portfolio/fullsize/fireWater.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Water Pollutants 
                   </div>
                   <div class="project-name">
-                    Project Name
+                    In certain areas fracking pollutes the water so much it becomes flammable
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+            <a class="portfolio-box" href="img/portfolio/fullsize/frackWater.jpg">
+              <img class="img-fluid" src="img/portfolio/fullsize/frackWater.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Water Pollutants
                   </div>
                   <div class="project-name">
-                    Project Name
+                     Even if the water isn't flammable, the pollutants still contaminate drinking water 
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+            <a class="portfolio-box" href="img/portfolio/fullsize/methaneFrack.jpg">
+              <img class="img-fluid" src="img/portfolio/fullsize/methaneFrack.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Methane
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Fracking rigs release flamable methane into the air hurting climate change
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+            <a class="portfolio-box" href="img/portfolio/fullsize/keepFrackOut.jpg">
+              <img class="img-fluid" src="img/portfolio/fullsize/keepFrackOut.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Get Involved 
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Grassroots movements can help enforce stricter regulations to help reduce environmental damange from fracking rigs
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+            <a class="portfolio-box" href="img/portfolio/fullsize/glassHalfClean.jpg">
+              <img class="img-fluid" src="img/portfolio/fullsize/glassHalfClean.jpg" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Power of Misconception
                   </div>
                   <div class="project-name">
-                    Project Name
+                    The industry players take advantage of miscommunication and confusion to mitigate public outcry
                   </div>
                 </div>
               </div>
             </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
-            <hr class="my-4">
-            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>123-456-6789</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-            <p>
-              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
-            </p>
           </div>
         </div>
       </div>

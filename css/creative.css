@@ -58,11 +58,6 @@ section {
   margin-top: 0;
 }
 
-.question{
-  font-weight: 600;
-  color: #ee4b28
-}
-
 ::-moz-selection {
   color: #fff;
   background: #212529;
@@ -315,4 +310,3 @@ header.masthead p {
 .btn-primary:active, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
-
